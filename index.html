@@ -247,63 +247,211 @@
       position: relative;
     }
 
-    /* ── PILLARS / PILARES ── */
+    /* ── PILARES (MOSAICO TIPO REVISTA) ── */
     .pillars-bg {
       background: var(--deep);
       border-top: 1px solid rgba(10,132,255,.15);
       border-bottom: 1px solid rgba(10,132,255,.15);
     }
 
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
+    .tech-block {
+      margin-top: 5rem;
     }
 
-    .pillar-card {
-      background: var(--mid);
-      border: 1px solid rgba(10,132,255,.2);
-      border-top: 2px solid var(--accent);
-      padding: 2rem 1.5rem;
-      transition: border-color .3s, transform .3s;
-      position: relative;
-      overflow: hidden;
+    .tech-block:first-of-type { margin-top: 3rem; }
+
+    .tech-head {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--cyan);
+      padding-left: 1.2rem;
     }
 
-    .pillar-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(10,132,255,.05) 0%, transparent 60%);
-      pointer-events: none;
-    }
+    .tech-head .tech-icon { font-size: 1.8rem; }
 
-    .pillar-card:hover {
-      border-color: var(--cyan);
-      transform: translateY(-4px);
-    }
-
-    .pillar-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .pillar-card h3 {
+    .tech-head h3 {
       font-family: 'Rajdhani', sans-serif;
       font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: .05em;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      letter-spacing: .04em;
       text-transform: uppercase;
       color: var(--white);
-      margin-bottom: .6rem;
     }
 
-    .pillar-card p {
-      font-size: .88rem;
+    .tech-head p {
+      font-size: .9rem;
       color: var(--dim);
       line-height: 1.6;
+      max-width: 520px;
+      margin-left: auto;
+    }
+
+    @media(max-width:768px){
+      .tech-head { flex-direction: column; gap: .5rem; }
+      .tech-head p { margin-left: 0; }
+    }
+
+    /* Mosaico de 4 imágenes (PCB) */
+    .mosaic-7 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 150px;
+      gap: .75rem;
+    }
+    .mosaic-7 img:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .mosaic-7 img:nth-child(4) { grid-column: span 2; }
+
+    /* Mosaico de 2 imágenes (Procesos) */
+    .mosaic-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 240px;
+      gap: .75rem;
+    }
+
+    /* Imagen única ancha (SCADA) */
+    .mosaic-1 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 460px;
+      gap: .75rem;
+    }
+
+    .mosaic-7 img, .mosaic-2 img, .mosaic-1 img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: var(--navy);
+      border: 1px solid rgba(10,132,255,.25);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+      padding: .4rem;
+    }
+
+    .mosaic-7 img:hover, .mosaic-2 img:hover, .mosaic-1 img:hover {
+      transform: scale(1.02);
+      border-color: var(--cyan);
+      box-shadow: 0 6px 24px rgba(0,212,255,.25);
+      z-index: 5;
+    }
+
+    @media(max-width:768px){
+      .mosaic-7 { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 120px; }
+      .mosaic-7 img:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+      .mosaic-7 img:nth-child(4) { grid-column: span 2; }
+      .mosaic-2 { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+      .mosaic-1 { grid-auto-rows: 240px; }
+    }
+
+    /* Pilar sin imágenes (Protocolos) */
+    .tech-note {
+      background: var(--mid);
+      border: 1px solid rgba(10,132,255,.2);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 1.8rem;
+      margin-top: 1.5rem;
+      font-size: .9rem;
+      color: var(--frost);
+      line-height: 1.6;
+    }
+
+    /* Diagrama de arquitectura (protocolos) */
+    .tech-diagram {
+      background: var(--navy);
+      border: 1px solid rgba(10,132,255,.2);
+      border-radius: 6px;
+      padding: 2rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .tech-diagram svg { width: 100%; height: auto; display: block; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,14,.95);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      animation: fadeIn .25s ease;
+    }
+
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+    .lightbox.active { display: flex; }
+
+    .lightbox-content {
+      position: relative;
+      width: 90vw;
+      height: 88vh;
+      max-width: 1300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #lightbox-img {
+      max-width: 100%;
+      max-height: calc(100% - 60px);
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 12px 48px rgba(0,0,0,.6);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -10px;
+      right: 0;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 2rem;
+      cursor: pointer;
+      transition: color .2s;
+      line-height: 1;
+    }
+
+    .lightbox-close:hover { color: var(--cyan); }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(10,132,255,.2);
+      border: 1px solid rgba(10,132,255,.5);
+      color: var(--cyan);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .2s;
+      font-size: 1.3rem;
+      border-radius: 3px;
+    }
+
+    .lightbox-arrow:hover { background: rgba(10,132,255,.5); }
+    .lightbox-arrow.prev { left: -1rem; }
+    .lightbox-arrow.next { right: -1rem; }
+
+    .lightbox-counter {
+      margin-top: 1.2rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .85rem;
+      color: var(--frost);
+      letter-spacing: .1em;
+    }
+
+    @media(max-width:768px){
+      .lightbox-arrow.prev { left: .2rem; }
+      .lightbox-arrow.next { right: .2rem; }
     }
 
     /* ── OBJETIVOS ── */
@@ -352,54 +500,8 @@
       line-height: 1.6;
     }
 
-    /* ── TEAM ── */
+    /* ── TEAM / CONTACTO BG ── */
     .team-bg { background: var(--deep); border-top: 1px solid rgba(10,132,255,.15); }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .member-card {
-      background: var(--mid);
-      border: 1px solid rgba(10,132,255,.15);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: border-color .3s;
-    }
-
-    .member-card:hover { border-color: rgba(0,212,255,.4); }
-
-    .avatar {
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--steel), var(--accent));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: white;
-      margin: 0 auto 1rem;
-    }
-
-    .member-card h4 {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-    }
-
-    .member-card p {
-      font-size: .78rem;
-      color: var(--dim);
-      margin-top: .3rem;
-      font-family: 'IBM Plex Mono', monospace;
-    }
 
     /* ── FOOTER ── */
     footer {
@@ -521,33 +623,205 @@
     </div>
   </section>
 
-  <!-- PILARES -->
+  <!-- PILARES (MOSAICO TIPO REVISTA) -->
   <section id="pilares" class="pillars-bg">
     <div class="section-inner">
       <div class="section-label reveal">// 02 — Tecnologías</div>
       <h2 class="section-title reveal">Pilares<br>Tecnológicos</h2>
-      <div class="pillars-grid">
-        <div class="pillar-card reveal">
-          <span class="pillar-icon">🔌</span>
+
+      <!-- PLACAS DE ADQUISICIÓN -->
+      <div class="tech-block reveal">
+        <div class="tech-head">
+          <span class="tech-icon">🔌</span>
           <h3>Placas de Adquisición</h3>
           <p>Hardware embebido instalado en máquinas para captura de señales analógicas y digitales en campo.</p>
         </div>
-        <div class="pillar-card reveal">
-          <span class="pillar-icon">📡</span>
+        <div class="mosaic-7" data-gallery="pcb">
+          <img src="Fotos PCB/Fotos PCB (1).png" alt="PCB 1" onclick="openLightbox('pcb', 0)">
+          <img src="Fotos PCB/Fotos PCB (2).png" alt="PCB 2" onclick="openLightbox('pcb', 1)">
+          <img src="Fotos PCB/Fotos PCB (3).png" alt="PCB 3" onclick="openLightbox('pcb', 2)">
+          <img src="Fotos PCB/Fotos PCB (4).png" alt="PCB 4" onclick="openLightbox('pcb', 3)">
+        </div>
+      </div>
+
+      <!-- PROTOCOLOS INDUSTRIALES -->
+      <div class="tech-block reveal">
+        <div class="tech-head">
+          <span class="tech-icon">📡</span>
           <h3>Protocolos Industriales</h3>
           <p>Comunicación mediante Modbus, MQTT, OPC-UA para integración con PLCs y sistemas existentes.</p>
         </div>
-        <div class="pillar-card reveal">
-          <span class="pillar-icon">🖥️</span>
+        <div class="tech-diagram">
+          <svg viewBox="0 0 1200 340" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="Flujo de datos: Sensores, Placa de adquisición, PLC, SCADA, ERP/MES, Nube">
+            <defs>
+              <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0d2240"/>
+                <stop offset="1" stop-color="#091628"/>
+              </linearGradient>
+              <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#0a84ff"/>
+                <stop offset="1" stop-color="#00d4ff"/>
+              </linearGradient>
+            </defs>
+
+            <!-- CONEXIONES animadas (y = 165, centro de las cajas) -->
+            <line x1="140" y1="165" x2="228" y2="165" stroke="url(#flow)" stroke-width="2" stroke-dasharray="6 5">
+              <animate attributeName="stroke-dashoffset" from="22" to="0" dur="0.9s" repeatCount="indefinite"/>
+            </line>
+            <line x1="348" y1="165" x2="436" y2="165" stroke="url(#flow)" stroke-width="2" stroke-dasharray="6 5">
+              <animate attributeName="stroke-dashoffset" from="22" to="0" dur="0.9s" repeatCount="indefinite"/>
+            </line>
+            <line x1="556" y1="165" x2="644" y2="165" stroke="url(#flow)" stroke-width="2" stroke-dasharray="6 5">
+              <animate attributeName="stroke-dashoffset" from="22" to="0" dur="0.9s" repeatCount="indefinite"/>
+            </line>
+            <line x1="764" y1="165" x2="852" y2="165" stroke="url(#flow)" stroke-width="2" stroke-dasharray="6 5">
+              <animate attributeName="stroke-dashoffset" from="22" to="0" dur="0.9s" repeatCount="indefinite"/>
+            </line>
+            <line x1="972" y1="165" x2="1060" y2="165" stroke="url(#flow)" stroke-width="2" stroke-dasharray="6 5">
+              <animate attributeName="stroke-dashoffset" from="22" to="0" dur="0.9s" repeatCount="indefinite"/>
+            </line>
+
+            <!-- NODO 1: SENSORES -->
+            <g>
+              <rect x="20" y="110" width="120" height="110" rx="6" fill="url(#boxGrad)" stroke="#0a84ff" stroke-width="1.5"/>
+              <rect x="20" y="110" width="120" height="4" rx="2" fill="#00d4ff"/>
+              <g stroke="#00d4ff" stroke-width="2" fill="none">
+                <rect x="76" y="126" width="8" height="27" rx="4"/>
+                <circle cx="80" cy="156" r="7" fill="#00d4ff" stroke="none"/>
+                <rect x="78.5" y="134" width="3" height="20" rx="1.5" fill="#00d4ff" stroke="none"/>
+              </g>
+              <text x="80" y="186" text-anchor="middle" fill="#f0f6ff" font-family="Rajdhani,sans-serif" font-size="14" font-weight="700" letter-spacing="1">SENSORES</text>
+              <text x="80" y="203" text-anchor="middle" fill="#607ea0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing="1">CAMPO</text>
+            </g>
+            <!-- NODO 2: PLACA -->
+            <g>
+              <rect x="228" y="110" width="120" height="110" rx="6" fill="url(#boxGrad)" stroke="#0a84ff" stroke-width="1.5"/>
+              <rect x="228" y="110" width="120" height="4" rx="2" fill="#00d4ff"/>
+              <g stroke="#00d4ff" stroke-width="2" fill="none" stroke-linecap="round">
+                <rect x="276" y="136" width="24" height="24" rx="2"/>
+                <rect x="283" y="143" width="10" height="10" fill="#00d4ff" stroke="none"/>
+                <path d="M281 136 v-5 M288 136 v-5 M295 136 v-5"/>
+                <path d="M281 160 v5 M288 160 v5 M295 160 v5"/>
+                <path d="M276 142 h-5 M276 154 h-5"/>
+                <path d="M300 142 h5 M300 154 h5"/>
+              </g>
+              <text x="288" y="186" text-anchor="middle" fill="#f0f6ff" font-family="Rajdhani,sans-serif" font-size="14" font-weight="700" letter-spacing="1">PLACA</text>
+              <text x="288" y="203" text-anchor="middle" fill="#607ea0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing="1">ADQUISICIÓN</text>
+            </g>
+            <!-- NODO 3: PLC -->
+            <g>
+              <rect x="436" y="110" width="120" height="110" rx="6" fill="url(#boxGrad)" stroke="#0a84ff" stroke-width="1.5"/>
+              <rect x="436" y="110" width="120" height="4" rx="2" fill="#00d4ff"/>
+              <g fill="#00d4ff">
+                <rect x="494" y="130" width="4" height="7"/>
+                <rect x="494" y="130" width="4" height="7" transform="rotate(45 496 146)"/>
+                <rect x="494" y="130" width="4" height="7" transform="rotate(90 496 146)"/>
+                <rect x="494" y="130" width="4" height="7" transform="rotate(135 496 146)"/>
+                <rect x="494" y="130" width="4" height="7" transform="rotate(180 496 146)"/>
+                <rect x="494" y="130" width="4" height="7" transform="rotate(225 496 146)"/>
+                <rect x="494" y="130" width="4" height="7" transform="rotate(270 496 146)"/>
+                <rect x="494" y="130" width="4" height="7" transform="rotate(315 496 146)"/>
+              </g>
+              <circle cx="496" cy="146" r="10" fill="#0d2240" stroke="#00d4ff" stroke-width="2"/>
+              <circle cx="496" cy="146" r="3.5" fill="none" stroke="#00d4ff" stroke-width="2"/>
+              <text x="496" y="186" text-anchor="middle" fill="#f0f6ff" font-family="Rajdhani,sans-serif" font-size="14" font-weight="700" letter-spacing="1">PLC</text>
+              <text x="496" y="203" text-anchor="middle" fill="#607ea0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing="1">CONTROL</text>
+            </g>
+            <!-- NODO 4: SCADA -->
+            <g>
+              <rect x="644" y="110" width="120" height="110" rx="6" fill="url(#boxGrad)" stroke="#0a84ff" stroke-width="1.5"/>
+              <rect x="644" y="110" width="120" height="4" rx="2" fill="#00d4ff"/>
+              <g stroke="#00d4ff" stroke-width="2" fill="none" stroke-linejoin="round">
+                <rect x="686" y="130" width="36" height="26" rx="2"/>
+                <path d="M704 156 v6 M696 162 h16"/>
+                <polyline points="691,150 698,143 704,147 711,138" stroke-width="1.5"/>
+              </g>
+              <text x="704" y="186" text-anchor="middle" fill="#f0f6ff" font-family="Rajdhani,sans-serif" font-size="14" font-weight="700" letter-spacing="1">SCADA</text>
+              <text x="704" y="203" text-anchor="middle" fill="#607ea0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing="1">SUPERVISIÓN</text>
+            </g>
+            <!-- NODO 5: ERP/MES -->
+            <g>
+              <rect x="852" y="110" width="120" height="110" rx="6" fill="url(#boxGrad)" stroke="#0a84ff" stroke-width="1.5"/>
+              <rect x="852" y="110" width="120" height="4" rx="2" fill="#00d4ff"/>
+              <g stroke="#00d4ff" stroke-width="2" fill="none" stroke-linejoin="round">
+                <path d="M898 159 V147 L908 153 V147 L918 153 V147 L928 153 V159 Z"/>
+                <rect x="898" y="138" width="4" height="9" fill="#00d4ff" stroke="none"/>
+              </g>
+              <text x="912" y="186" text-anchor="middle" fill="#f0f6ff" font-family="Rajdhani,sans-serif" font-size="13" font-weight="700" letter-spacing="1">ERP / MES</text>
+              <text x="912" y="203" text-anchor="middle" fill="#607ea0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing="1">GESTIÓN</text>
+            </g>
+            <!-- NODO 6: NUBE -->
+            <g>
+              <rect x="1060" y="110" width="120" height="110" rx="6" fill="url(#boxGrad)" stroke="#0a84ff" stroke-width="1.5"/>
+              <rect x="1060" y="110" width="120" height="4" rx="2" fill="#00d4ff"/>
+              <g stroke="#00d4ff" stroke-width="2" fill="none">
+                <circle cx="1120" cy="146" r="13"/>
+                <ellipse cx="1120" cy="146" rx="5.5" ry="13"/>
+                <path d="M1107 146 H1133"/>
+                <path d="M1109.5 138 H1130.5 M1109.5 154 H1130.5" stroke-width="1.3"/>
+              </g>
+              <text x="1120" y="186" text-anchor="middle" fill="#f0f6ff" font-family="Rajdhani,sans-serif" font-size="14" font-weight="700" letter-spacing="1">NUBE</text>
+              <text x="1120" y="203" text-anchor="middle" fill="#607ea0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing="1">DASHBOARD</text>
+            </g>
+
+            <!-- ETIQUETAS DE PROTOCOLO (encima, centradas en los huecos) -->
+            <g>
+              <rect x="146" y="153" width="76" height="24" rx="12" fill="#0d2240" stroke="rgba(0,212,255,.6)"/>
+              <text x="184" y="169" text-anchor="middle" fill="#00d4ff" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".5">4-20mA</text>
+            </g>
+            <g>
+              <rect x="354" y="153" width="76" height="24" rx="12" fill="#0d2240" stroke="rgba(0,212,255,.6)"/>
+              <text x="392" y="169" text-anchor="middle" fill="#00d4ff" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".5">MODBUS</text>
+            </g>
+            <g>
+              <rect x="562" y="153" width="76" height="24" rx="12" fill="#0d2240" stroke="rgba(0,212,255,.6)"/>
+              <text x="600" y="169" text-anchor="middle" fill="#00d4ff" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".5">OPC-UA</text>
+            </g>
+            <g>
+              <rect x="770" y="153" width="76" height="24" rx="12" fill="#0d2240" stroke="rgba(0,212,255,.6)"/>
+              <text x="808" y="169" text-anchor="middle" fill="#00d4ff" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".5">SQL/REST</text>
+            </g>
+            <g>
+              <rect x="978" y="153" width="76" height="24" rx="12" fill="#0d2240" stroke="rgba(0,212,255,.6)"/>
+              <text x="1016" y="169" text-anchor="middle" fill="#00d4ff" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".5">MQTT</text>
+            </g>
+
+            <!-- BANDAS DE CAPA -->
+            <line x1="20" y1="245" x2="348" y2="245" stroke="rgba(58,110,165,.3)" stroke-width="1"/>
+            <text x="184" y="263" text-anchor="middle" fill="#3a6ea5" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing="2">CAMPO / EDGE</text>
+            <line x1="436" y1="245" x2="764" y2="245" stroke="rgba(58,110,165,.3)" stroke-width="1"/>
+            <text x="600" y="263" text-anchor="middle" fill="#3a6ea5" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing="2">PLANTA / CONTROL</text>
+            <line x1="852" y1="245" x2="1180" y2="245" stroke="rgba(58,110,165,.3)" stroke-width="1"/>
+            <text x="1016" y="263" text-anchor="middle" fill="#3a6ea5" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing="2">GESTIÓN / NUBE</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- SCADA CENTRALIZADO -->
+      <div class="tech-block reveal">
+        <div class="tech-head">
+          <span class="tech-icon">🖥️</span>
           <h3>SCADA Centralizado</h3>
           <p>Plataforma de supervisión con HMI en tiempo real, alarmas configurables y registro histórico.</p>
         </div>
-        <div class="pillar-card reveal">
-          <span class="pillar-icon">📊</span>
+        <div class="mosaic-1" data-gallery="scada">
+          <img src="Fotos Scada/Foto Scada Centralizado.png" alt="SCADA Dashboard" onclick="openLightbox('scada', 0)">
+        </div>
+      </div>
+
+      <!-- ANÁLISIS DE PROCESO -->
+      <div class="tech-block reveal">
+        <div class="tech-head">
+          <span class="tech-icon">📊</span>
           <h3>Análisis de Proceso</h3>
           <p>Visualización de tendencias, reportes de producción y detección de anomalías en variables críticas.</p>
         </div>
+        <div class="mosaic-2" data-gallery="proceso">
+          <img src="Fotos Procesos/Proceso1.png" alt="Proceso 1" onclick="openLightbox('proceso', 0)">
+          <img src="Fotos Procesos/Proceso2.png" alt="Proceso 2" onclick="openLightbox('proceso', 1)">
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -618,34 +892,73 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Scroll reveal
+  <!-- LIGHTBOX OVERLAY -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      <button class="lightbox-arrow prev" onclick="navLightbox(-1)">◀</button>
+      <img id="lightbox-img" src="" alt="Imagen ampliada">
+      <button class="lightbox-arrow next" onclick="navLightbox(1)">▶</button>
+      <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script>
+    // ========== GALERÍAS + LIGHTBOX ==========
+    const galleries = {
+      pcb: [
+        'Fotos PCB/Fotos PCB (1).png',
+        'Fotos PCB/Fotos PCB (2).png',
+        'Fotos PCB/Fotos PCB (3).png',
+        'Fotos PCB/Fotos PCB (4).png'
+      ],
+      scada: ['Fotos Scada/Foto Scada Centralizado.png'],
+      proceso: ['Fotos Procesos/Proceso1.png', 'Fotos Procesos/Proceso2.png']
+    };
+
+    let active = { gallery: null, index: 0 };
+
+    function openLightbox(gallery, index) {
+      active = { gallery, index };
+      renderLightbox();
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    function navLightbox(dir) {
+      const imgs = galleries[active.gallery];
+      active.index = (active.index + dir + imgs.length) % imgs.length;
+      renderLightbox();
+    }
+
+    function renderLightbox() {
+      const imgs = galleries[active.gallery];
+      document.getElementById('lightbox-img').src = imgs[active.index];
+      document.getElementById('lightbox-counter').textContent = `${active.index + 1} / ${imgs.length}`;
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') navLightbox(1);
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+    });
+
+    // ========== SCROLL REVEAL ==========
     const els = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
-               if (e.isIntersecting) {
+        if (e.isIntersecting) {
           setTimeout(() => e.target.classList.add('visible'), i * 80);
           io.unobserve(e.target);
         }
       });
     }, { threshold: .15 });
     els.forEach(el => io.observe(el));
-
-    // Formulario de contacto
-    function enviarContacto(btn) {
-      const section = btn.closest('div');
-      const inputs = section.querySelectorAll('input, textarea');
-      let valid = true;
-      inputs.forEach(el => { if (!el.value.trim()) { el.style.borderColor = '#ff4d4d'; valid = false; } });
-      if (!valid) return;
-      btn.textContent = 'Enviando...';
-      btn.style.opacity = '.7';
-      setTimeout(() => {
-        btn.style.display = 'none';
-        document.getElementById('form-msg').style.display = 'block';
-        inputs.forEach(el => { el.value = ''; el.style.borderColor = 'rgba(10,132,255,.2)'; });
-      }, 1200);
-    }
   </script>
 </body>
 </html>
