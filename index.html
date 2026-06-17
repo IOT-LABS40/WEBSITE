@@ -517,6 +517,105 @@
 
     .footer-mark { color: var(--cyan); font-weight: 500; }
 
+    /* ── METRICS STRIP ── */
+    .metrics-strip {
+      background: var(--deep);
+      border-top: 1px solid rgba(10,132,255,.2);
+      border-bottom: 1px solid rgba(10,132,255,.2);
+    }
+
+    .metrics-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: rgba(10,132,255,.12);
+    }
+
+    .metric-item {
+      background: var(--deep);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: var(--cyan);
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .68rem;
+      color: var(--dim);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-top: .5rem;
+      line-height: 1.5;
+    }
+
+    @media(max-width:768px) {
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .metric-item:last-child { grid-column: span 2; }
+    }
+
+    /* ── SECTORES ── */
+    .sectors-grid {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .sector-card {
+      background: var(--mid);
+      border: 1px solid rgba(10,132,255,.15);
+      border-top: 2px solid var(--accent);
+      padding: 1.8rem 1.5rem;
+      transition: border-color .3s, box-shadow .3s;
+    }
+
+    .sector-card:hover {
+      border-top-color: var(--cyan);
+      box-shadow: 0 4px 20px rgba(0,212,255,.1);
+    }
+
+    .sector-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .65rem;
+      color: var(--accent);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: .8rem;
+      opacity: .8;
+    }
+
+    .sector-card h4 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: .5rem;
+    }
+
+    .sector-card p {
+      font-size: .83rem;
+      color: var(--dim);
+      line-height: 1.6;
+    }
+
+    @media(max-width:768px) { .sectors-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:480px) { .sectors-grid { grid-template-columns: 1fr; } }
+
+    /* ── NAV ACTIVE ── */
+    nav a.nav-active { color: var(--cyan); }
+
     /* ── SCROLL REVEAL ── */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -531,6 +630,7 @@
       <li><a href="#descripcion">Descripción</a></li>
       <li><a href="#pilares">Pilares</a></li>
       <li><a href="#objetivos">Objetivos</a></li>
+      <li><a href="#sectores">Sectores</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
@@ -550,6 +650,32 @@
 
     </div>
   </section>
+
+  <!-- MÉTRICAS -->
+  <div class="metrics-strip">
+    <div class="metrics-grid">
+      <div class="metric-item reveal">
+        <div class="metric-value">&lt; 5ms</div>
+        <div class="metric-label">Latencia de<br>adquisición</div>
+      </div>
+      <div class="metric-item reveal">
+        <div class="metric-value">+50</div>
+        <div class="metric-label">Variables<br>por nodo</div>
+      </div>
+      <div class="metric-item reveal">
+        <div class="metric-value">24/7</div>
+        <div class="metric-label">Monitoreo<br>continuo</div>
+      </div>
+      <div class="metric-item reveal">
+        <div class="metric-value">4+</div>
+        <div class="metric-label">Protocolos<br>industriales</div>
+      </div>
+      <div class="metric-item reveal">
+        <div class="metric-value">100%</div>
+        <div class="metric-label">Trazabilidad<br>histórica</div>
+      </div>
+    </div>
+  </div>
 
   <!-- DESCRIPCIÓN -->
   <section id="descripcion">
@@ -905,10 +1031,50 @@
     </div>
   </section>
 
+  <!-- SECTORES -->
+  <section id="sectores">
+    <div class="section-inner">
+      <div class="section-label reveal">// 04 — Sectores</div>
+      <h2 class="section-title reveal">¿Dónde<br>aplicamos?</h2>
+      <div class="sectors-grid">
+        <div class="sector-card reveal">
+          <div class="sector-tag">// MFG</div>
+          <h4>Automotriz y manufactura</h4>
+          <p>Control de líneas de ensamble, monitoreo de prensas, robots y actuadores con trazabilidad por lote y turno.</p>
+        </div>
+        <div class="sector-card reveal">
+          <div class="sector-tag">// AGR</div>
+          <h4>Alimentación y bebidas</h4>
+          <p>Supervisión de temperaturas, caudales y presiones en procesos de pasteurización, llenado y envasado.</p>
+        </div>
+        <div class="sector-card reveal">
+          <div class="sector-tag">// PHR</div>
+          <h4>Farmacéutica y laboratorios</h4>
+          <p>Registro continuo de variables críticas bajo normativas GMP, con historial validable para auditorías regulatorias.</p>
+        </div>
+        <div class="sector-card reveal">
+          <div class="sector-tag">// TEX</div>
+          <h4>Textil e indumentaria</h4>
+          <p>Monitoreo de consumo energético, temperatura de teñido y eficiencia de telares y estampadoras en línea.</p>
+        </div>
+        <div class="sector-card reveal">
+          <div class="sector-tag">// ENR</div>
+          <h4>Energía y petroquímica</h4>
+          <p>Adquisición en tiempo real en plantas de generación, compresores y procesos de refinación y distribución.</p>
+        </div>
+        <div class="sector-card reveal">
+          <div class="sector-tag">// H2O</div>
+          <h4>Agua y saneamiento</h4>
+          <p>Supervisión de estaciones de bombeo, caudales, niveles y calidad del agua con alarmas automáticas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACTO -->
   <section id="contacto" class="team-bg">
     <div class="section-inner" style="text-align:center;">
-      <div class="section-label reveal">// 04 — Contacto</div>
+      <div class="section-label reveal">// 05 — Contacto</div>
       <h2 class="section-title reveal">¿Hablamos?</h2>
       <p class="reveal" style="color:var(--frost);line-height:1.8;font-weight:300;max-width:500px;margin:1rem auto 2.5rem;">
         ¿Tienes máquinas de producción que necesitan supervisión en tiempo real? Escríbenos y evaluamos juntos la mejor solución SCADA para tu proceso.
@@ -989,6 +1155,22 @@
       if (e.key === 'ArrowRight') navLightbox(1);
       if (e.key === 'ArrowLeft') navLightbox(-1);
     });
+
+    // ========== SCROLL SPY ==========
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const spySections = document.querySelectorAll('section[id]');
+
+    const spyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle('nav-active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { threshold: 0.25, rootMargin: '-10% 0px -60% 0px' });
+
+    spySections.forEach(sec => spyObserver.observe(sec));
 
     // ========== SCROLL REVEAL ==========
     const els = document.querySelectorAll('.reveal');
