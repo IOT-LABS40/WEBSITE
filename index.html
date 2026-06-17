@@ -528,7 +528,7 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: rgba(10,132,255,.12);
     }
@@ -559,8 +559,7 @@
     }
 
     @media(max-width:768px) {
-      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-      .metric-item:last-child { grid-column: span 2; }
+      .metrics-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     /* ── SECTORES ── */
@@ -655,20 +654,12 @@
   <div class="metrics-strip">
     <div class="metrics-grid">
       <div class="metric-item reveal">
-        <div class="metric-value">&lt; 5ms</div>
-        <div class="metric-label">Latencia de<br>adquisición</div>
-      </div>
-      <div class="metric-item reveal">
         <div class="metric-value">10</div>
         <div class="metric-label">Variables<br>por nodo</div>
       </div>
       <div class="metric-item reveal">
         <div class="metric-value">24/7</div>
         <div class="metric-label">Monitoreo<br>continuo</div>
-      </div>
-      <div class="metric-item reveal">
-        <div class="metric-value">4+</div>
-        <div class="metric-label">Protocolos<br>industriales</div>
       </div>
       <div class="metric-item reveal">
         <div class="metric-value">100%</div>
