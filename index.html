@@ -1,19 +1,524 @@
-  "email": "contacto@iotlabs.cc",
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IOT LABS 4.0 | Soluciones IoT Industrial y Sistemas SCADA</title>
+    <meta name="description" content="Soluciones IoT industrial, SCADA y automatización para procesos productivos." />
+    <meta name="keywords" content="IoT Industrial, SCADA, Industria 4.0, PLC, MQTT, OPC-UA, automatización industrial" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://iotlabs.cc/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="IOT LABS 4.0" />
+    <meta property="og:description" content="Sistemas SCADA, IoT Industrial y monitorización avanzada para procesos productivos." />
+    <meta property="og:url" content="https://iotlabs.cc/" />
+    <meta property="og:image" content="https://iotlabs.cc/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IOT LABS 4.0" />
+    <meta name="twitter:description" content="Sistemas SCADA, IoT Industrial y monitorización avanzada para procesos productivos." />
+    <meta name="twitter:image" content="https://iotlabs.cc/logo.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IOT LABS 4.0",
+        "url": "https://iotlabs.cc",
+        "email": "contacto@iotlabs.cc",
+        "description": "Soluciones IoT Industrial, SCADA y monitorización de procesos industriales."
+      }
+    </script>
+    <style>
+      :root {
+        --navy: #050d1a;
+        --deep: #091628;
+        --mid: #0d2240;
+        --accent: #0a84ff;
+        --cyan: #00d4ff;
+        --steel: #3a6ea5;
+        --frost: #c8dff7;
+        --white: #f0f6ff;
+        --dim: #607ea0;
+      }
 
-  <div style="display:inline-flex;align-items:center;gap:1.2rem;background:var(--mid);border:1px solid rgba(10,132,255,.25);border-top:2px solid var(--cyan);padding:1.5rem 2.5rem;">
-    <span style="font-size:1.8rem;">✉️</span>
-    <div style="text-align:left;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--dim);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.3rem;">Email de contacto</div>
-      <a href="mailto:contacto@iotlabs.cc" style="color:var(--cyan);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:1.1rem;font-weight:500;">
-        contacto@iotlabs.cc
-      </a>
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--navy);
+        color: var(--white);
+        line-height: 1.6;
+      }
+
+      a { color: inherit; }
+      .container {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(5, 13, 26, 0.9);
+        border-bottom: 1px solid rgba(10, 132, 255, 0.2);
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 0;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--cyan);
+      }
+
+      .brand span { color: var(--white); }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        color: var(--dim);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+
+      nav a:hover { color: var(--cyan); }
+
+      .hero {
+        min-height: 80vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(0, 212, 255, 0.18), transparent 50%);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 780px;
+        padding: 80px 0 40px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 8px 16px;
+        border: 1px solid rgba(10, 132, 255, 0.35);
+        background: rgba(10, 132, 255, 0.08);
+        color: var(--cyan);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 12px;
+      }
+
+      h1 {
+        margin: 24px 0 18px;
+        line-height: 0.95;
+        font-size: clamp(3rem, 7vw, 6rem);
+        text-transform: uppercase;
+        letter-spacing: -0.06em;
+      }
+
+      .highlight {
+        display: block;
+        background: linear-gradient(90deg, var(--accent), var(--cyan));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero p {
+        max-width: 660px;
+        margin: 0 auto;
+        color: var(--frost);
+        font-size: 1.03rem;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        background: rgba(10, 132, 255, 0.18);
+        border-top: 1px solid rgba(10, 132, 255, 0.2);
+        border-bottom: 1px solid rgba(10, 132, 255, 0.2);
+      }
+
+      .metric {
+        background: var(--deep);
+        padding: 34px 18px;
+        text-align: center;
+      }
+
+      .metric-value {
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--cyan);
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .metric-label {
+        color: var(--dim);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-top: 8px;
+      }
+
+      section {
+        padding: 88px 0;
+      }
+
+      .section-label {
+        color: var(--cyan);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: -0.04em;
+        margin: 0 0 18px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 52px;
+        align-items: center;
+      }
+
+      .two-col p {
+        color: var(--frost);
+      }
+
+      .card {
+        background: var(--mid);
+        border: 1px solid rgba(10, 132, 255, 0.2);
+        border-top: 3px solid var(--accent);
+        padding: 28px;
+      }
+
+      .diagram {
+        width: 100%;
+        max-width: 420px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .pillars {
+        background: var(--deep);
+        border-top: 1px solid rgba(10, 132, 255, 0.15);
+        border-bottom: 1px solid rgba(10, 132, 255, 0.15);
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin-top: 32px;
+      }
+
+      .pillar {
+        background: var(--mid);
+        border: 1px solid rgba(10, 132, 255, 0.18);
+        padding: 24px 20px;
+      }
+
+      .pillar h3 {
+        margin: 0 0 10px;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .pillar p {
+        margin: 0;
+        color: var(--frost);
+      }
+
+      .objectives {
+        display: grid;
+        gap: 16px;
+        margin-top: 32px;
+      }
+
+      .objective {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        gap: 18px;
+        background: var(--mid);
+        border: 1px solid rgba(10, 132, 255, 0.18);
+        padding: 20px 22px;
+      }
+
+      .objective-number {
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+
+      .objective h3 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .objective p {
+        margin: 0;
+        color: var(--frost);
+      }
+
+      .contact-box {
+        display: inline-flex;
+        align-items: center;
+        gap: 18px;
+        padding: 22px 28px;
+        background: var(--mid);
+        border: 1px solid rgba(10, 132, 255, 0.25);
+        border-top: 3px solid var(--cyan);
+        margin-top: 20px;
+      }
+
+      .contact-box .icon {
+        font-size: 2rem;
+      }
+
+      .contact-box-label {
+        color: var(--dim);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 11px;
+      }
+
+      .contact-box a {
+        color: var(--cyan);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      footer {
+        border-top: 1px solid rgba(10, 132, 255, 0.2);
+        padding: 28px 0 40px;
+        color: var(--dim);
+        font-size: 0.82rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer-brand {
+        color: var(--cyan);
+        font-weight: 700;
+      }
+
+      @media (max-width: 780px) {
+        .nav-inner { flex-direction: column; gap: 12px; }
+        nav ul { flex-wrap: wrap; justify-content: center; }
+        .two-col, .grid-3 { grid-template-columns: 1fr; }
+        .metrics { grid-template-columns: 1fr; }
+        .contact-box { display: flex; flex-wrap: wrap; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-inner">
+        <div class="brand">IOT LABS <span>// 4.0</span></div>
+        <ul>
+          <li><a href="#descripcion">Descripción</a></li>
+          <li><a href="#pilares">Pilares</a></li>
+          <li><a href="#objetivos">Objetivos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container hero-content">
+        <div class="badge">Sistema SCADA · IOT LABS 4.0</div>
+        <h1>
+          Adquisición
+          <span class="highlight">Industrial</span>
+        </h1>
+        <p>
+          Sistemas SCADA para adquisición de variables industriales y de proceso. Placas de adquisición embebidas en maquinaria productiva para supervisión, control y trazabilidad en tiempo real.
+        </p>
+      </div>
+    </header>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-value">10</div>
+        <div class="metric-label">Variables por nodo</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">24/7</div>
+        <div class="metric-label">Monitoreo continuo</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">100%</div>
+        <div class="metric-label">Trazabilidad histórica</div>
+      </div>
     </div>
-  </div>
 
-  <a href="mailto:contacto@iotlabs.cc" style="color:var(--cyan);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:1.1rem;font-weight:500;">
-    contacto@iotlabs.cc
-  </a>
+    <section id="descripcion">
+      <div class="container two-col">
+        <div>
+          <div class="section-label">// 01 — Descripción</div>
+          <h2>¿De qué trata?</h2>
+          <p>
+            <strong>IOT LABS 4.0</strong> desarrolla sistemas SCADA para la adquisición de variables industriales y de proceso en entornos de manufactura. Diseñamos e implementamos placas de adquisición que capturan señales analógicas y digitales directamente en la planta.
+          </p>
+          <p>
+            Cada nodo recopila temperatura, presión, caudal, vibración, consumo energético y estado de actuadores para centralizar la información en una plataforma de supervisión, control y análisis.
+          </p>
+          <p>
+            El resultado es una red de sensores inteligente que convierte maquinaria existente en un ecosistema industrial conectado, trazable y operativo en tiempo real.
+          </p>
+        </div>
+        <div class="card">
+          <svg class="diagram" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-label="Diagrama industrial">
+            <polygon points="200,80 270,120 270,200 200,240 130,200 130,120" fill="rgba(10,132,255,.05)" stroke="#0a84ff" stroke-width="1.5"/>
+            <text x="200" y="170" text-anchor="middle" fill="#00d4ff" font-size="14" font-weight="700">SISTEMA</text>
+            <text x="200" y="188" text-anchor="middle" fill="#607ea0" font-size="10">CENTRAL</text>
+            <circle cx="200" cy="40" r="24" fill="rgba(10,132,255,.08)" stroke="#0a84ff"/>
+            <text x="200" y="38" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">IoT</text>
+            <text x="200" y="49" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">SENSORS</text>
+            <circle cx="340" cy="120" r="24" fill="rgba(10,132,255,.08)" stroke="#0a84ff"/>
+            <text x="340" y="118" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">CLOUD</text>
+            <text x="340" y="130" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">DATA</text>
+            <circle cx="340" cy="280" r="24" fill="rgba(10,132,255,.08)" stroke="#0a84ff"/>
+            <text x="340" y="278" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">ROBOT</text>
+            <text x="340" y="290" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">ARM</text>
+            <circle cx="200" cy="360" r="24" fill="rgba(10,132,255,.08)" stroke="#0a84ff"/>
+            <text x="200" y="358" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">DATA</text>
+            <text x="200" y="370" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">ANALYT.</text>
+            <circle cx="60" cy="280" r="24" fill="rgba(10,132,255,.08)" stroke="#0a84ff"/>
+            <text x="60" y="278" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">AI / ML</text>
+            <text x="60" y="290" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">PROC.</text>
+            <circle cx="60" cy="120" r="24" fill="rgba(10,132,255,.08)" stroke="#0a84ff"/>
+            <text x="60" y="118" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">ERP /</text>
+            <text x="60" y="130" text-anchor="middle" fill="#c8dff7" font-size="9" font-weight="700">MES</text>
+            <line x1="200" y1="64" x2="200" y2="80" stroke="#0a84ff" stroke-dasharray="4 3" opacity="0.5"/>
+            <line x1="318" y1="129" x2="270" y2="155" stroke="#0a84ff" stroke-dasharray="4 3" opacity="0.5"/>
+            <line x1="318" y1="270" x2="270" y2="200" stroke="#0a84ff" stroke-dasharray="4 3" opacity="0.5"/>
+            <line x1="200" y1="336" x2="200" y2="240" stroke="#0a84ff" stroke-dasharray="4 3" opacity="0.5"/>
+            <line x1="82" y1="270" x2="130" y2="200" stroke="#0a84ff" stroke-dasharray="4 3" opacity="0.5"/>
+            <line x1="82" y1="130" x2="130" y2="155" stroke="#0a84ff" stroke-dasharray="4 3" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+    </section>
 
-  <a href="mailto:contacto@iotlabs.cc" style="color:var(--cyan);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:1.1rem;font-weight:500;">
-    contacto@iotlabs.cc
-  </a>
+    <section id="pilares" class="pillars">
+      <div class="container">
+        <div class="section-label">// 02 — Tecnologías</div>
+        <h2>Pilares tecnológicos</h2>
+        <div class="grid-3">
+          <div class="pillar">
+            <h3>Placas de adquisición</h3>
+            <p>Hardware embebido para capturar señales analógicas y digitales directamente en equipos y líneas de producción.</p>
+          </div>
+          <div class="pillar">
+            <h3>Protocolos industriales</h3>
+            <p>Integración con Modbus, MQTT, OPC-UA y conectividad con PLCs, sensores y sistemas existentes.</p>
+          </div>
+          <div class="pillar">
+            <h3>SCADA centralizado</h3>
+            <p>Supervisión en tiempo real, alarmas, registro histórico y control operativo desde una plataforma única.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="objetivos">
+      <div class="container">
+        <div class="section-label">// 03 — Objetivos</div>
+        <h2>¿Qué buscamos?</h2>
+        <div class="objectives">
+          <div class="objective">
+            <div class="objective-number">01</div>
+            <div>
+              <h3>Adquisición de variables de proceso</h3>
+              <p>Capturar en tiempo real variables y estados críticos para optimizar la operación y la trazabilidad del proceso.</p>
+            </div>
+          </div>
+          <div class="objective">
+            <div class="objective-number">02</div>
+            <div>
+              <h3>Supervisión SCADA centralizada</h3>
+              <p>Unificar la visualización, alarmas y control de cada nodo para una operación segura y eficiente.</p>
+            </div>
+          </div>
+          <div class="objective">
+            <div class="objective-number">03</div>
+            <div>
+              <h3>Integración con infraestructura existente</h3>
+              <p>Conectar con equipos, PLCs, ERP, MES y plataformas cloud sin interrumpir la operación productiva.</p>
+            </div>
+          </div>
+          <div class="objective">
+            <div class="objective-number">04</div>
+            <div>
+              <h3>Mantenimiento predictivo</h3>
+              <p>Analizar tendencias y detectar anomalías para anticipar fallas, reducir tiempos de parada y mejorar la productividad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <div class="section-label">// 05 — Contacto</div>
+        <h2>Hablemos de tu proyecto</h2>
+        <p>Tenemos máquinas de producción que necesitan supervisión en tiempo real, alertas y trazabilidad. Escríbenos y evaluaremos la mejor solución SCADA para tu proceso.</p>
+        <div class="contact-box">
+          <div class="icon">✉️</div>
+          <div>
+            <div class="contact-box-label">Email de contacto</div>
+            <a href="mailto:contacto@iotlabs.cc">contacto@iotlabs.cc</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-inner">
+        <div><span class="footer-brand">IOT LABS 4.0</span> · Sistema operativo en línea</div>
+        <div><a href="mailto:contacto@iotlabs.cc" style="color:var(--cyan); text-decoration:none;">contacto@iotlabs.cc</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
