@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZE6RT5579J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-ZE6RT5579J');
+  </script>
+
   <title>IOT LABS 4.0 | Soluciones IoT Industrial y Sistemas SCADA</title>
 
   <meta name="description"
@@ -1112,8 +1122,7 @@
         <span style="font-size:1.8rem;">✉</span>
         <div style="text-align:left;">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--dim);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.3rem;">Email de contacto</div>
-          <a href="mailto:info@iotlabs.cc" style="color:var(--cyan);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:1.1rem;font-weight:500;transition:opacity .2s;"
-            onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">info@iotlabs.cc</a>
+          <a href="mailto:info@iotlabs.cc" onclick="gtag('event','click_email');" style="color:var(--cyan);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:1.1rem;font-weight:500;transition:opacity .2s;"onmouseover="this.style.opacity='.7'"onmouseout="this.style.opacity='1'">info@iotlabs.cc</a>
         </div>
       </div>
     </div>
