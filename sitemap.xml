@@ -1,11 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
     <loc>https://iotlabs.cc/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iotlabs.cc/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://iotlabs.cc/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iotlabs.cc/" />
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20PCB/Fotos%20PCB%20%281%29.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20PCB/Fotos%20PCB%20%282%29.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20PCB/Fotos%20PCB%20%283%29.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20PCB/Fotos%20PCB%20%284%29.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20Scada/Foto%20Scada%20Centralizado.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20Procesos/Proceso1.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20Procesos/Proceso2.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://iotlabs.cc/en/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iotlabs.cc/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://iotlabs.cc/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iotlabs.cc/" />
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20PCB/Fotos%20PCB%20%281%29.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20PCB/Fotos%20PCB%20%282%29.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20PCB/Fotos%20PCB%20%283%29.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20PCB/Fotos%20PCB%20%284%29.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20Scada/Foto%20Scada%20Centralizado.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20Procesos/Proceso1.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://iotlabs.cc/Fotos%20Procesos/Proceso2.png</image:loc>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
 </urlset>
