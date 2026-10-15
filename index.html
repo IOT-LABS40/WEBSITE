@@ -42,6 +42,9 @@
         content="Sistemas SCADA, IoT Industrial y monitorización avanzada para procesos productivos." />
   <meta property="og:url" content="https://iotlabs.cc/" />
   <meta property="og:image" content="https://iotlabs.cc/logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="IOT LABS — Sistemas de automatismos e IoT" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -57,12 +60,14 @@
     "@type": "Organization",
     "name": "IOT LABS 4.0",
     "url": "https://iotlabs.cc",
+    "logo": "https://iotlabs.cc/logo.png",
     "email": "info@iotlabs.cc",
     "description": "Soluciones IoT Industrial, SCADA y monitorización de procesos industriales."
   }
   </script>
   <meta name="theme-color" content="#050d1a" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23050d1a'/%3E%3Cpolygon points='16,5 25,10.5 25,21.5 16,27 7,21.5 7,10.5' fill='none' stroke='%2300d4ff' stroke-width='2.4'/%3E%3Ccircle cx='16' cy='16' r='3.6' fill='%2300d4ff'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -85,7 +90,7 @@
       --glass-blur:   blur(16px) saturate(140%);
 
       --ease-out: cubic-bezier(.22,1,.36,1);
-      --nav-h: 68px;
+      --nav-h: 74px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -219,23 +224,18 @@
     }
 
     .nav-logo {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: 1.3rem;
-      letter-spacing: .1em;
-      color: var(--cyan);
-      text-transform: uppercase;
-      text-decoration: none;
-      white-space: nowrap;
       display: inline-flex;
       align-items: center;
-      gap: .55rem;
       position: relative;
       z-index: 120;
+      text-decoration: none;
+      transition: opacity .2s, transform .3s var(--ease-out);
     }
 
-    .nav-logo svg { width: 22px; height: 22px; }
-    .nav-logo span { color: var(--white); }
+    .nav-logo img { height: 54px; width: auto; display: block; }
+    .nav-logo:hover { opacity: .9; transform: translateY(-1px); }
+
+    @media (max-width: 480px) { .nav-logo img { height: 42px; } }
 
     nav ul {
       list-style: none;
@@ -1372,7 +1372,8 @@
       color: var(--dim);
     }
 
-    .footer-mark { color: var(--cyan); font-weight: 500; }
+    .footer-mark img { height: 56px; width: auto; display: block; opacity: .9; transition: opacity .2s; }
+    .footer-mark:hover img { opacity: 1; }
     .footer-status { display: inline-flex; align-items: center; gap: .5rem; }
     .footer-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #2bff9e; animation: ping 2s infinite; }
     .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: .3rem; }
@@ -1520,9 +1521,8 @@
 
   <!-- NAV -->
   <nav id="nav">
-    <a href="#top" class="nav-logo" aria-label="IOT LABS 4.0 — inicio">
-      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><polygon points="16,3 27,9.5 27,22.5 16,29 5,22.5 5,9.5" stroke="currentColor" stroke-width="2.2"/><circle cx="16" cy="16" r="4" fill="currentColor"/></svg>
-      IOT LABS <span>// 4.0</span>
+    <a href="#top" class="nav-logo" aria-label="IOT LABS — inicio">
+      <img src="logo-dark.png" alt="IOT LABS — Sistemas de automatismos e IoT" width="393" height="120">
     </a>
     <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
       <span></span><span></span><span></span>
@@ -1964,7 +1964,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-mark">IOT LABS 4.0</div>
+    <a href="#top" class="footer-mark" aria-label="Volver arriba"><img src="logo-dark.png" alt="IOT LABS" width="393" height="120"></a>
     <div class="footer-status">Sistema operativo · <span style="color:var(--accent)">En línea</span></div>
     <div class="footer-right">
       <a href="mailto:info@iotlabs.cc" onclick="gtag('event','click_email');">✉ info@iotlabs.cc</a>
