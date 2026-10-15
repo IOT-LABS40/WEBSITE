@@ -34,6 +34,9 @@
   <meta name="robots" content="index,follow" />
 
   <link rel="canonical" href="https://iotlabs.cc/" />
+  <link rel="alternate" hreflang="es" href="https://iotlabs.cc/" />
+  <link rel="alternate" hreflang="en" href="https://iotlabs.cc/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://iotlabs.cc/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -41,6 +44,8 @@
   <meta property="og:description"
         content="Sistema plug &amp; play y no invasivo que se adapta a tu maquinaria para adquirir datos del proceso en tiempo real." />
   <meta property="og:url" content="https://iotlabs.cc/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:image" content="https://iotlabs.cc/logo.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -242,7 +247,35 @@
       display: flex;
       align-items: center;
       gap: 2.2rem;
+      margin-left: auto;
     }
+
+    /* Selector de idioma */
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 1.6rem;
+      padding: 3px;
+      border-radius: 8px;
+      background: rgba(13,34,64,.6);
+      border: 1px solid var(--glass-border);
+      position: relative;
+      z-index: 120;
+    }
+
+    .lang-switch a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .08em;
+      color: var(--dim);
+      text-decoration: none;
+      padding: .32rem .55rem;
+      border-radius: 6px;
+      transition: color .2s, background .2s;
+    }
+
+    .lang-switch a:hover { color: var(--white); }
+    .lang-switch a[aria-current="true"] { color: var(--navy); background: var(--cyan); font-weight: 500; }
 
     nav ul a {
       position: relative;
@@ -309,7 +342,8 @@
 
     @media (max-width: 900px) {
       nav { padding: 0 1.25rem; }
-      .nav-toggle { display: block; }
+      .nav-toggle { display: block; order: 3; }
+      .lang-switch { order: 2; margin-left: auto; margin-right: .6rem; }
 
       nav ul {
         position: fixed;
@@ -452,6 +486,9 @@
     }
 
     @keyframes shine { to { background-position: 300% 0; } }
+
+    /* La versión en inglés tiene palabras más largas en el titular */
+    html[lang="en"] .hero h1 { font-size: clamp(2.6rem, 6vw, 5.3rem); }
 
     .hero-lead {
       max-width: 580px;
@@ -1583,6 +1620,10 @@
       <li><a href="#sectores">Sectores</a></li>
       <li><a href="#contacto" class="nav-cta">Contacto</a></li>
     </ul>
+    <div class="lang-switch" role="navigation" aria-label="Idioma">
+      <a href="index.html" hreflang="es" lang="es" aria-current="true">ES</a>
+      <a href="en/index.html" hreflang="en" lang="en" onclick="gtag('event','switch_lang_en');">EN</a>
+    </div>
   </nav>
 
   <!-- HERO -->
