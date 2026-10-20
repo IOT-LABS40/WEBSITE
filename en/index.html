@@ -15,7 +15,7 @@
   <meta name="keywords"
         content="Industrial IoT, SCADA, Industry 4.0, plug and play, non-invasive data acquisition, PLC, MQTT, OPC-UA, industrial automation, industrial monitoring, data acquisition, predictive maintenance" />
 
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
 
   <link rel="canonical" href="https://iotlabs.cc/en/" />
   <link rel="alternate" hreflang="es" href="https://iotlabs.cc/" />
@@ -46,16 +46,61 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "IOTLABS",
-    "url": "https://iotlabs.cc",
-    "logo": "https://iotlabs.cc/logo.png",
-    "email": "info@iotlabs.cc",
-    "description": "Plug & play, non-invasive process data acquisition system that adapts to existing machinery. SCADA and industrial IoT."
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://iotlabs.cc/#website",
+        "name": "IOTLABS",
+        "alternateName": [
+          "IOT LABS",
+          "iotlabs.cc"
+        ],
+        "url": "https://iotlabs.cc/",
+        "inLanguage": [
+          "es",
+          "en"
+        ],
+        "publisher": {
+          "@id": "https://iotlabs.cc/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://iotlabs.cc/#organization",
+        "name": "IOTLABS",
+        "url": "https://iotlabs.cc/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://iotlabs.cc/logo-square.png",
+          "width": 600,
+          "height": 600
+        },
+        "image": "https://iotlabs.cc/logo.png",
+        "email": "info@iotlabs.cc",
+        "description": "Plug & play, non-invasive process data acquisition system that adapts to existing machinery. SCADA and industrial IoT."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://iotlabs.cc/en/#webpage",
+        "url": "https://iotlabs.cc/en/",
+        "name": "IOTLABS | Industrial IoT Solutions and SCADA Systems",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://iotlabs.cc/#website"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://iotlabs.cc/logo.png",
+          "width": 1200,
+          "height": 630
+        }
+      }
+    ]
   }
   </script>
   <meta name="theme-color" content="#050d1a" />
   <link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
