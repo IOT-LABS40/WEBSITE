@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Consentimiento de cookies: Google Analytics y Microsoft Clarity solo se cargan si el visitante acepta -->
+  <script src="../consent.js"></script>
+
+  <title>Privacy and cookie policy | IOTLABS</title>
+  <meta name="description" content="Which personal data is processed on iotlabs.cc, for what purpose, which cookies are used and how to exercise your rights." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#050d1a" />
+  <link rel="canonical" href="https://iotlabs.cc/en/privacy.html" />
+  <link rel="alternate" hreflang="es" href="https://iotlabs.cc/privacidad.html" />
+  <link rel="alternate" hreflang="en" href="https://iotlabs.cc/en/privacy.html" />
+  <link rel="alternate" hreflang="x-default" href="https://iotlabs.cc/privacidad.html" />
+  <link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #050d1a; --deep: #091628; --mid: #0d2240; --accent: #0a84ff; --cyan: #00d4ff;
+      --steel: #3a6ea5; --frost: #c8dff7; --white: #f0f6ff; --dim: #7d97b8;
+      --glass-border: rgba(140,190,255,.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      background: var(--navy); color: var(--white);
+      font-family: 'IBM Plex Sans', sans-serif; line-height: 1.7;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image: linear-gradient(rgba(10,132,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(10,132,255,.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    body::after {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background: radial-gradient(40% 40% at 15% 10%, rgba(10,77,255,.22), transparent 70%), radial-gradient(35% 35% at 90% 80%, rgba(0,166,200,.15), transparent 70%);
+    }
+    :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 2px; }
+    ::selection { background: rgba(0,212,255,.3); }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; gap: 1rem;
+      height: 74px; padding: 0 3rem;
+      background: rgba(5,13,26,.8); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(10,132,255,.18);
+    }
+    header .logo img { height: 50px; width: auto; display: block; }
+    .back {
+      margin-left: auto; font-family: 'IBM Plex Mono', monospace; font-size: .78rem; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--dim); text-decoration: none; transition: color .2s;
+    }
+    .back:hover { color: var(--cyan); }
+    .lang-switch {
+      display: inline-flex; padding: 3px; border-radius: 8px;
+      background: rgba(13,34,64,.6); border: 1px solid var(--glass-border);
+    }
+    .lang-switch a {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem; letter-spacing: .08em;
+      color: var(--dim); text-decoration: none; padding: .32rem .55rem; border-radius: 6px;
+    }
+    .lang-switch a:hover { color: var(--white); }
+    .lang-switch a[aria-current="true"] { color: var(--navy); background: var(--cyan); font-weight: 500; }
+
+    main { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 4rem 2rem 5rem; }
+    .label { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--cyan); letter-spacing: .2em; text-transform: uppercase; margin-bottom: .8rem; }
+    h1 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1; text-transform: uppercase; margin-bottom: 1rem; }
+    .updated { font-family: 'IBM Plex Mono', monospace; font-size: .75rem; color: var(--dim); letter-spacing: .05em; margin-bottom: 2.5rem; }
+    .intro { color: var(--frost); font-weight: 300; font-size: 1.05rem; margin-bottom: 2.5rem; }
+
+    .toc {
+      display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 3rem;
+    }
+    .toc a {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase;
+      color: var(--cyan); text-decoration: none; padding: .35rem .75rem; border-radius: 999px;
+      background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.25); transition: background .2s;
+    }
+    .toc a:hover { background: rgba(0,212,255,.18); }
+
+    section {
+      background: rgba(13,34,64,.38); border: 1px solid var(--glass-border); border-radius: 14px;
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      padding: 1.8rem 1.9rem; margin-bottom: 1.2rem;
+    }
+    h2 {
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.45rem; letter-spacing: .04em;
+      text-transform: uppercase; margin-bottom: .8rem; display: flex; gap: .8rem; align-items: baseline;
+    }
+    h2 .n { font-family: 'IBM Plex Mono', monospace; font-size: .9rem; color: var(--accent); font-weight: 500; }
+    h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: .05em; text-transform: uppercase; margin: 1.4rem 0 .6rem; color: var(--frost); }
+    p, li { color: var(--frost); font-weight: 300; font-size: .95rem; }
+    p + p { margin-top: .7rem; }
+    ul { padding-left: 1.2rem; margin-top: .6rem; }
+    li + li { margin-top: .35rem; }
+    strong { color: var(--white); font-weight: 500; }
+    a { color: var(--cyan); }
+    code { font-family: 'IBM Plex Mono', monospace; font-size: .82em; color: var(--white); background: rgba(5,13,26,.6); padding: .1rem .35rem; border-radius: 4px; }
+
+    .table-wrap { overflow-x: auto; margin-top: .8rem; border-radius: 10px; border: 1px solid rgba(140,190,255,.1); }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; min-width: 560px; }
+    th, td { text-align: left; padding: .7rem .85rem; vertical-align: top; border-bottom: 1px solid rgba(140,190,255,.08); }
+    th { font-family: 'IBM Plex Mono', monospace; font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); font-weight: 500; background: rgba(5,13,26,.45); }
+    td { color: var(--frost); font-weight: 300; }
+    tr:last-child td { border-bottom: none; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.1rem;
+      font: 600 .9rem 'Rajdhani', sans-serif; letter-spacing: .1em; text-transform: uppercase;
+      color: #fff; background: var(--accent); border: none; border-radius: 8px; padding: .75rem 1.4rem; cursor: pointer;
+      box-shadow: 0 8px 30px -8px rgba(10,132,255,.7); transition: background .2s, color .2s;
+    }
+    .btn:hover { background: var(--cyan); color: var(--navy); }
+
+    footer {
+      position: relative; z-index: 1; border-top: 1px solid rgba(10,132,255,.2); background: rgba(5,13,26,.85);
+      padding: 1.8rem 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+      font-family: 'IBM Plex Mono', monospace; font-size: .75rem; color: var(--dim);
+    }
+    footer a { color: var(--cyan); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    @media (max-width: 700px) {
+      header { padding: 0 1.1rem; height: 66px; }
+      header .logo img { height: 40px; }
+      .back { display: none; }
+      .lang-switch { margin-left: auto; }
+      main { padding: 2.5rem 1.1rem 4rem; }
+      section { padding: 1.4rem 1.2rem; }
+      footer { flex-direction: column; text-align: center; padding: 1.6rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo" aria-label="IOTLABS — home"><img src="../logo-dark.png" alt="IOTLABS" width="393" height="120"></a>
+    <a href="index.html" class="back">← Back to the site</a>
+    <div class="lang-switch" role="navigation" aria-label="Language">
+      <a href="../privacidad.html" hreflang="es" lang="es">ES</a>
+      <a href="privacy.html" hreflang="en" lang="en" aria-current="true">EN</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="label">// Legal</div>
+    <h1>Privacy and cookie policy</h1>
+    <div class="updated">Last updated: 20 October 2026</div>
+    <p class="intro">This page explains which personal data is processed when you visit <strong>iotlabs.cc</strong> or write to us, what it is used for, who it is shared with and how you can exercise your rights. It also lists the cookies used on the site.</p>
+
+    <nav class="toc" aria-label="Contents">
+      <a href="#responsable">Controller</a>
+      <a href="#datos">Data and purposes</a>
+      <a href="#proveedores">Providers</a>
+      <a href="#cookies">Cookies</a>
+      <a href="#derechos">Your rights</a>
+      <a href="#cambios">Changes</a>
+    </nav>
+
+    <section id="responsable">
+      <h2><span class="n">01</span>Data controller</h2>
+      <p><strong>IOTLABS</strong> is a personal project; there is currently no incorporated company behind it. The controller of your data is the individual who owns the project.</p>
+      <p>For any privacy question, write to <a href="mailto:info@iotlabs.cc">info@iotlabs.cc</a>.</p>
+    </section>
+
+    <section id="datos">
+      <h2><span class="n">02</span>What data we process and why</h2>
+      <p>The site has no forms or user accounts. We only process data in these cases:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Purpose</th><th>Data</th><th>Legal basis</th><th>Retention</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Replying to your messages</strong> when you email us</td><td>Name, email address and any information you send us</td><td>Your consent when you contact us and, where applicable, taking steps at your request before entering into a contract</td><td>As long as needed to handle your enquiry and follow-up. You can ask us to delete it at any time</td></tr>
+            <tr><td><strong>Security and operation</strong> of the site</td><td>IP address, browser and technical connection data</td><td>Legitimate interest in keeping the site available and protected against attacks</td><td>The retention periods of the hosting provider’s technical logs</td></tr>
+            <tr><td><strong>Usage analytics</strong>, only if you accept it</td><td>Pages visited, interaction with the site (clicks, scrolling), device, browser, approximate location and cookie identifiers</td><td>Your consent, which you can withdraw at any time</td><td>The lifetime of each cookie (see <a href="#cookies">Cookies</a>) and each tool’s retention settings</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:1rem">We do not sell your data, we do not use it for advertising and we do not make automated decisions that affect you.</p>
+    </section>
+
+    <section id="proveedores">
+      <h2><span class="n">03</span>Providers and international transfers</h2>
+      <p>To run the site we use the following providers, which may process some of your data on our behalf:</p>
+      <ul>
+        <li><strong>Cloudflare, Inc.</strong>: website hosting and content delivery network.</li>
+        <li><strong>Google LLC</strong>: Google Analytics (only with your consent) and Google Fonts. The site’s fonts are downloaded from Google’s servers, which receive your IP address.</li>
+        <li><strong>Microsoft Corporation</strong>: Microsoft Clarity (only with your consent).</li>
+        <li>The <strong>email provider</strong> we use for the <code>info@iotlabs.cc</code> account.</li>
+      </ul>
+      <p>Some of these providers are based in the United States. Cloudflare, Google and Microsoft participate in the <strong>EU-U.S. Data Privacy Framework</strong>, which provides adequate safeguards for these transfers.</p>
+    </section>
+
+    <section id="cookies">
+      <h2><span class="n">04</span>Cookies</h2>
+      <p>Cookies are small files that a website stores in your browser. We use technical storage, which does not require your consent, and analytics cookies, which are <strong>only set if you accept them</strong> in the cookie notice.</p>
+
+      <h3>Technical (always on)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Owner</th><th>Purpose</th><th>Duration</th></tr></thead>
+          <tbody>
+            <tr><td><code>iotlabs_consent_v1</code></td><td>IOTLABS (browser local storage)</td><td>Remember whether you accepted or rejected analytics cookies</td><td>12 months</td></tr>
+            <tr><td><code>__cf_bm</code></td><td>Cloudflare</td><td>Protect the site against bots and malicious traffic. Only present if Cloudflare enables it</td><td>30 minutes</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Analytics (only with your consent)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Owner</th><th>Purpose</th><th>Duration</th></tr></thead>
+          <tbody>
+            <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Distinguish visitors to produce usage statistics</td><td>2 years</td></tr>
+            <tr><td><code>_ga_&lt;ID&gt;</code></td><td>Google Analytics</td><td>Keep the session state</td><td>2 years</td></tr>
+            <tr><td><code>_clck</code></td><td>Microsoft Clarity</td><td>Visitor identifier and Clarity preferences</td><td>1 year</td></tr>
+            <tr><td><code>_clsk</code></td><td>Microsoft Clarity</td><td>Group the pages you visit into a single session</td><td>1 day</td></tr>
+            <tr><td><code>CLID</code></td><td>Microsoft Clarity</td><td>Identify the first visit across sites that use Clarity</td><td>1 year</td></tr>
+            <tr><td><code>MUID</code></td><td>Microsoft</td><td>User identifier used by Microsoft services</td><td>About 1 year</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:1rem">Microsoft Clarity produces heatmaps and session recordings (clicks, scrolling and mouse movements) to help us understand how the site is used. It masks sensitive content by default.</p>
+
+      <h3>How to manage cookies</h3>
+      <p>You can accept, reject or change your choice at any time with the button below or the “Cookie settings” link in the footer. If you withdraw your consent, we delete the analytics cookies from our domain. You can also delete cookies in your browser settings.</p>
+      <button type="button" class="btn" data-cookie-settings>Cookie settings</button>
+    </section>
+
+    <section id="derechos">
+      <h2><span class="n">05</span>Your rights</h2>
+      <p>You can exercise your rights of <strong>access, rectification, erasure, objection, restriction of processing and portability</strong>, and <strong>withdraw your consent</strong>, at any time by writing to <a href="mailto:info@iotlabs.cc">info@iotlabs.cc</a>. We will reply within one month at the latest.</p>
+      <p>If you believe we have not handled your data properly, you can lodge a complaint with the data protection authority in your country.</p>
+    </section>
+
+    <section id="cambios">
+      <h2><span class="n">06</span>Changes to this policy</h2>
+      <p>We may update this policy if the site, the tools we use or the law change. The current version and its update date will always be published here.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>IOTLABS · <a href="mailto:info@iotlabs.cc">info@iotlabs.cc</a></span>
+    <span><a href="#" data-cookie-settings>Cookie settings</a></span>
+  </footer>
+</body>
+</html>

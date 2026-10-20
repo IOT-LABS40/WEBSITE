@@ -4,24 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZE6RT5579J"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-ZE6RT5579J');
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "yugp8e0gnd");
-  </script>
+  <!-- Consentimiento de cookies: Google Analytics y Microsoft Clarity solo se cargan si el visitante acepta -->
+  <script src="consent.js"></script>
 
   <title>IOTLABS | Soluciones IoT Industrial y Sistemas SCADA</title>
 
@@ -1465,6 +1449,8 @@
     .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: .3rem; }
     .footer-right a { color: var(--cyan); text-decoration: none; transition: color .2s; }
     .footer-right a:hover { color: var(--white); }
+    .footer-legal a { color: var(--dim); }
+    .footer-legal a:hover { color: var(--cyan); }
 
     @media (max-width: 700px) {
       footer { flex-direction: column; text-align: center; padding: 2rem 1.25rem; }
@@ -2077,6 +2063,7 @@
     <div class="footer-status">Sistema operativo · <span style="color:var(--accent)">En línea</span></div>
     <div class="footer-right">
       <a href="mailto:info@iotlabs.cc" onclick="gtag('event','click_email');">✉ info@iotlabs.cc</a>
+      <span class="footer-legal"><a href="privacidad.html">Privacidad y cookies</a> · <a href="#" data-cookie-settings>Configurar cookies</a></span>
       <span>© <span id="year">2025</span> — Todos los derechos reservados</span>
     </div>
   </footer>
