@@ -29,7 +29,6 @@
       text: 'Usamos almacenamiento técnico para que la web funcione y, solo si lo aceptas, cookies de analítica de Google Analytics y Microsoft Clarity para entender cómo se usa la web y mejorarla.',
       more: 'Política de privacidad y cookies',
       reject: 'Rechazar',
-      settings: 'Configurar',
       accept: 'Aceptar',
       techTitle: 'Técnicas',
       techText: 'Necesarias para que la web funcione y para recordar tu elección.',
@@ -46,7 +45,6 @@
       text: 'We use technical storage to make the site work and, only if you accept, analytics cookies from Google Analytics and Microsoft Clarity to understand how the site is used and improve it.',
       more: 'Privacy and cookie policy',
       reject: 'Reject',
-      settings: 'Settings',
       accept: 'Accept',
       techTitle: 'Technical',
       techText: 'Required for the site to work and to remember your choice.',
@@ -162,8 +160,6 @@
     '.ck button:hover{background:rgba(0,212,255,.14);color:#00d4ff}' +
     '.ck button.ck-main{background:#0a84ff;border-color:#0a84ff;color:#fff}' +
     '.ck button.ck-main:hover{background:#00d4ff;border-color:#00d4ff;color:#050d1a}' +
-    '.ck button.ck-link{border-color:transparent;background:none;color:#7d97b8;padding-left:.4rem;padding-right:.4rem;text-decoration:underline;text-underline-offset:3px}' +
-    '.ck button.ck-link:hover{color:#00d4ff}' +
     '.ck button:focus-visible{outline:2px solid #00d4ff;outline-offset:2px}' +
     '.ck-actions .ck-grow{flex:1 1 auto}' +
     '.ck-panel{display:none;margin-top:1rem;border-top:1px solid rgba(140,190,255,.12);padding-top:.4rem}' +
@@ -181,7 +177,7 @@
     '.ck-sw input:focus-visible+i{outline:2px solid #00d4ff;outline-offset:2px}' +
     '@media (max-width:520px){.ck{left:.75rem;right:.75rem;bottom:.75rem;width:auto;padding:1.1rem}' +
       '.ck-actions .ck-grow{display:none}.ck-actions .ck-main{flex:1 1 40%;order:1}' +
-      '.ck-actions .ck-link,.ck-actions .ck-alt{flex:1 1 100%;order:2}}' +
+      '.ck-actions .ck-alt{flex:1 1 100%;order:2}}' +
     '@media (prefers-reduced-motion:reduce){.ck{transition:none}}';
 
   var root = null;
@@ -220,8 +216,9 @@
         '<button type="button" class="ck-main" data-ck="reject">' + T.rejectAll + '</button>' +
         '<button type="button" class="ck-main" data-ck="accept">' + T.acceptAll + '</button>';
     } else {
+      // Primera capa: solo Rechazar y Aceptar (una única finalidad: analítica).
+      // El panel de configuración se abre desde el enlace "Configurar cookies" del pie.
       a.innerHTML =
-        '<button type="button" class="ck-link" data-ck="settings" aria-expanded="false" aria-controls="ck-panel">' + T.settings + '</button>' +
         '<span class="ck-grow"></span>' +
         '<button type="button" class="ck-main" data-ck="reject">' + T.reject + '</button>' +
         '<button type="button" class="ck-main" data-ck="accept">' + T.accept + '</button>';
@@ -232,7 +229,6 @@
         if (act === 'accept') apply(true);
         else if (act === 'reject') apply(false);
         else if (act === 'save') apply(root.querySelector('#ck-an').checked);
-        else if (act === 'settings') openSettings();
       });
     });
   }
