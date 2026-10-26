@@ -6,7 +6,7 @@
 
   <url>
     <loc>https://iotlabs.cc/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://iotlabs.cc/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://iotlabs.cc/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://iotlabs.cc/" />
@@ -37,7 +37,7 @@
 
   <url>
     <loc>https://iotlabs.cc/en/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://iotlabs.cc/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://iotlabs.cc/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://iotlabs.cc/" />
@@ -67,21 +67,21 @@
   </url>
 
   <url>
-    <loc>https://iotlabs.cc/privacidad.html</loc>
-    <lastmod>2026-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://iotlabs.cc/privacidad.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://iotlabs.cc/en/privacy.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://iotlabs.cc/privacidad.html" />
+    <loc>https://iotlabs.cc/privacidad</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iotlabs.cc/privacidad" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://iotlabs.cc/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iotlabs.cc/privacidad" />
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://iotlabs.cc/en/privacy.html</loc>
-    <lastmod>2026-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://iotlabs.cc/privacidad.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://iotlabs.cc/en/privacy.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://iotlabs.cc/privacidad.html" />
+    <loc>https://iotlabs.cc/en/privacy</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iotlabs.cc/privacidad" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://iotlabs.cc/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iotlabs.cc/privacidad" />
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

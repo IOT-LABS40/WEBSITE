@@ -21,7 +21,8 @@
   var MAX_AGE = 365 * 24 * 60 * 60 * 1000; // 12 meses
 
   var lang = (document.documentElement.lang || 'es').slice(0, 2) === 'en' ? 'en' : 'es';
-  var POLICY_URL = lang === 'en' ? 'privacy.html#cookies' : 'privacidad.html#cookies';
+  // URLs limpias: Cloudflare redirige las rutas .html a su versión sin extensión
+  var POLICY_URL = lang === 'en' ? 'privacy#cookies' : 'privacidad#cookies';
 
   var T = {
     es: {
